@@ -1,21 +1,13 @@
+import React from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Button } from 'react-native';
+import { GluestackProvider } from './src/components/GluestackProvider';
+import { AppNavigator } from './src/navigation/AppNavigator';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Welcome to PI lPerk!</Text>
-      <Button title="Get Started" onPress={() => alert('Hello!')} />
+    <GluestackProvider>
+      <AppNavigator />
       <StatusBar style="auto" />
-    </View>
+    </GluestackProvider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
